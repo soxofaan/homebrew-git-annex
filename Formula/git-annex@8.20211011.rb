@@ -17,6 +17,7 @@ class GitAnnexAT820211011 < Formula
   def install
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args,
+                    "--flag=-GitLfs",
                     "--flags=+S3"
     bin.install_symlink "git-annex" => "git-annex-shell"
   end
